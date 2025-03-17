@@ -1,10 +1,10 @@
 .DEFAULT_GOAL = help
 
 venv: ## Create a virtual environment
-	uv venv
+	@uv venv
 
 install: venv ## Install the dependencies
-	uv pip install -r requirements.txt
+	@uv pip install -r requirements.txt
 
 help: ## Display help
 	@awk 'BEGIN {FS = ":.*##"; \
