@@ -1,7 +1,7 @@
 .DEFAULT_GOAL = help
 
 venv: ## Create a virtual environment
-	@uv venv
+	@uv venv --python=python3.11
 
 install: venv ## Install the dependencies
 	@uv pip install -r requirements.txt
