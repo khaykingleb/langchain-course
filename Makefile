@@ -6,6 +6,13 @@ venv: ## Create a virtual environment
 install: venv ## Install the dependencies
 	@uv pip install -r requirements.txt
 
+env: ## Create .env file if it doesn't exist
+	@if ! [ -e .env ]; then \
+		cp .env.example .env; \
+		echo "Created .env file. Please edit it according to your setup."; \
+	fi
+.PHONY: env
+
 help: ## Display help
 	@awk 'BEGIN {FS = ":.*##"; \
 		printf "\nUsage:\n  make \033[36m<target>\033[0m\n\n"} \
